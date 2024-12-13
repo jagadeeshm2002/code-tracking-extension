@@ -1,0 +1,53 @@
+{
+  "name": "code-tracking-extension",
+  "version": "0.0.1",
+  "description": "VS Code extension for code tracking",
+  "main": "out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "lint": "eslint src --ext ts",
+    "prepare": "npm run compile"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeTracking.connectGitHub",
+        "title": "Code Tracking: Connect GitHub"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.3.2",
+    "vscode-test": "^1.6.1"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.1",
+    "axios": "^1.6.2",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "mocha": "^11.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
