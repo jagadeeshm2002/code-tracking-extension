@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "VS Code extension for code tracking",
   "main": "dist/extension.js",
-  "repository": {},
+  "repository": {"url": "https://github.com/jagadeeshm2002/code-tracking-extension"},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
