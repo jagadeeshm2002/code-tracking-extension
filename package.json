@@ -1,9 +1,12 @@
 {
-  "name": "code-tracking-extension",
+  "name": "code-tracking",
   "version": "0.0.1",
   "description": "VS Code extension for code tracking",
+  "publisher": "jagadeesh",
   "main": "dist/extension.js",
-  "repository": {"url": "https://github.com/jagadeeshm2002/code-tracking-extension"},
+  "repository": {
+    "url": "https://github.com/jagadeeshm2002/code-tracking-extension"
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -40,12 +43,24 @@
         "command": "codeTracking.toggleTracking",
         "title": "Code Tracking: Toggle Tracking"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Code Tracking",
+      "properties": {
+        "codeTracking.githubClientId": {
+          "type": "string",
+          "description": "GitHub OAuth Client ID for Code Tracking"
+        },
+        "codeTracking.githubClientSecret": {
+          "type": "string",
+          "description": "GitHub OAuth Client Secret for Code Tracking"
+        }
+      }
+    }
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^18.19.68",
     "@types/vscode": "^1.85.0 || ^1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
@@ -55,12 +70,10 @@
   },
   "dependencies": {
     "@octokit/rest": "^20.1.1",
-    "axios": "^1.6.2",
     "dotenv": "^16.4.7",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
-    "mocha": "^11.0.1",
-    "node-fetch": "^3.3.2"
+    "mocha": "^11.0.1"
   },
   "keywords": [],
   "author": "",
