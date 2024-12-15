@@ -1,66 +1,112 @@
+
 # Code Tracking VS Code Extension
 
-## Features
+## Overview
+Code Tracking is a powerful VS Code extension that simplifies your development workflow by automatically logging and tracking code changes directly to a private GitHub repository.
 
-- Connect to GitHub via OAuth
-- Automatically create a private `code-tracking` repository
-- Track code changes with simple comments
-- Log entries locally and on GitHub
+## Features
+- 🔒 Secure GitHub OAuth integration
+- 📦 Automatic private repository creation
+- 📝 Intelligent code change tracking
+- 🌐 Local and remote logging
+- 🧩 Multi-language comment support
+
+## Prerequisites
+- A GitHub account
+- VS Code version 1.85.0 or later
 
 ## Installation
+1. Open VS Code
+2. Go to Extensions (Cmd+Shift+X or Ctrl+Shift+X)
+3. Search for "Code Tracking"
+4. Click "Install"
 
-1. Install the extension from VS Code marketplace
-2. Open the Command Palette (Cmd+Shift+P on macOS or Ctrl+Shift+P on Windows/Linux)
-3. Run "Code Tracking: Connect GitHub"
-4. Authorize the extension with your GitHub account
-
-## Usage
+## Getting Started
 
 ### Connecting GitHub
+1. Open the Command Palette (Cmd+Shift+P or Ctrl+Shift+P)
+2. Run "Code Tracking: Connect GitHub"
+3. Follow the OAuth flow to authorize the extension
 
-1. Use the "Code Tracking: Connect GitHub" command
-2. Follow the OAuth flow to authorize the extension
-
-### Tracking Code
-
-To log a tracking entry, simply add a comment in your code:
+### Tracking Code Changes
+Add a tracking comment in any supported language:
 
 ```typescript
-// code-tracking-> Started implementing user authentication
-// track: started implementing user authertication
-
+// track: Started implementing user authentication
+// code-tracking-> Refactoring login flow
 ```
 
-This will automatically:
-- Add an entry to the `code-tracking` repository's README
-- Log the entry locally in `.code-tracking.log`
+Supported tracking comment styles:
+- `// track: message`
+- `/* track: message */`
+- `# track: message`
+- `-- track: message`
+- `; track: message`
+- `<!-- track: message -->`
 
 ## Commands
-
 - `Code Tracking: Connect GitHub`: Connect your GitHub account
-- `Code Tracking: Start Tracking`: Begin monitoring for tracking comments
+- `Code Tracking: Toggle Tracking`: Enable/Disable tracking
+- `Code Tracking: Configure Tracking`: Adjust tracking settings
 
 ## Configuration
-
-You can customize the repository name in VSCode settings:
+Customize the extension in VS Code settings:
 
 ```json
 {
-  "codeTracking.repositoryName": "my-custom-tracking-repo"
+  "codeTracking.repositoryName": "my-custom-tracking-repo",
+  "codeTracking.autoCommitInterval": 30,
+  "codeTracking.excludedFiles": ["**/.git/**", "**/node_modules/**"]
 }
 ```
 
-## Requirements
+Configuration Options:
+- `repositoryName`: Custom GitHub repository name
+- `autoCommitInterval`: Minutes between automatic commits
+- `excludedFiles`: Patterns of files to ignore
 
-- GitHub Account
+## Security
+- Private repository created automatically
+- OAuth-based authentication
+- Secure token management
 
-## Known Issues
+## Supported Languages
+Supports tracking comments in:
+- TypeScript/JavaScript
+- Python
+- Ruby
+- SQL
+- HTML
+- And more!
 
-- Beta version may have limited OAuth support
-- save trigger the event to fire commit logs
+## Known Limitations
+- Beta version with ongoing improvements
+- Requires an active internet connection
+- GitHub account required
+
+## Troubleshooting
+- Ensure GitHub OAuth is correctly configured
+- Check VS Code settings for correct configuration
+- Verify internet connectivity
 
 ## Release Notes
 
 ### 0.1.0
+- Initial release
+- GitHub OAuth integration
+- Basic code tracking
+- Local and remote logging
 
-Initial release of Code Tracking extension
+## Contributing
+Contributions are welcome! 
+- Report issues on GitHub
+- Submit pull requests
+- Provide feedback
+
+## License
+ISC License
+
+## Support
+For support, please open an issue on the GitHub repository.
+
+
