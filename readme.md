@@ -27,6 +27,8 @@ To log a tracking entry, simply add a comment in your code:
 
 ```typescript
 // code-tracking-> Started implementing user authentication
+// track: started implementing user authertication
+
 ```
 
 This will automatically:
@@ -51,12 +53,11 @@ You can customize the repository name in VSCode settings:
 ## Requirements
 
 - GitHub Account
-- Personal Access Token (during initial setup)
 
 ## Known Issues
 
 - Beta version may have limited OAuth support
-- Requires manual token input for now
+- save trigger the event to fire commit logs
 
 ## Release Notes
 
